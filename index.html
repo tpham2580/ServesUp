@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Serves-Up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="container p-2">
+
+    	<!-- navbar to link other tables -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
+          <a class="navbar-brand" href="servesup.html">Serves-Up</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link active" href="index.html">Menu Items <span class="sr-only">(current)</span></a>
+              <a class="nav-item nav-link" href="productCategories.html">Product Categories</a>
+              <a class="nav-item nav-link" href="carts.html">Carts</a>
+              <a class="nav-item nav-link" href="cartItems.html">Cart Items</a>
+              <a class="nav-item nav-link" href="payments.html">Payments</a>
+            </div>
+          </div>
+        </nav>
+
+        <br />
+
+        <!--Insert entry -->
+        <h2>Add A Menu Item</h2>
+        <form>
+          <div class="row">
+            <div class="col-auto">
+                <input type="text" class="form-control mb-2" placeholder="Name" id = "menuItemName">
+            </div>
+            <div class="col-auto">
+                <input type="number" class="form-control" placeholder="Category ID: " id="menuItemCategory">
+            </div>
+            <div class="col-auto"> 
+                <input type="number" step = "0.01" class="form-control" placeholder="Unit Price" id="menuItemPrice">
+            </div>
+            <div class="col-auto">
+                <input type="text"class="form-control" placeholder="Description" id="menuItemDesc">
+            </div>
+            <div class="col-auto">
+                <input type="text" class="form-control" placeholder="Producer" id="menuItemProducer">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-auto">
+                <input type="number" class="form-control" placeholder="Year" id="menuItemYear">
+            </div>            
+            <div class="col-auto">
+              <button type="submit" class="btn btn-dark" id="addInput">Add</button>
+            </div>
+        </div>
+        </form>
+
+        <br/>
+
+        <!-- Display Menu Items table -->
+        <div class="row">
+            <h2>Menu Items</h2>
+        </div>
+
+        <div class = "row">
+            <form>
+                <div class="input-group mb-3 p-1 col-2">
+                    <input type="text" placeholder="Search a Menu Name" id= "searchItem" aria-label="SearchMenuItems" aria-describedby="button-addon2">
+                    <button class="btn btn-outline-secondary" id="searchMenuItems" type="submit"><i class="fa fa-search"></i></button>
+                </div>
+
+                <div class="mb-3 p-1 col-2">
+                    <button class="btn btn-danger" id="resetSearch" type="button">Reset Search</button>
+                </div>
+            </form>
+        </div>
+        
+        <table>
+            <thead>
+             <tr>
+                <th>Menu ID</th>
+                <th>Menu Name</th>
+                <th>Category ID</th>
+                <th>Unit Price (USD)</th>
+                <th>Description</th>
+                <th>Producer</th>
+                <th>Year</th>
+             </tr>
+            </thead>
+
+            <tbody id = "menuItemTable"></tbody>
+<!--
+            <tr>
+                <th scope='row'>0</th>
+                <td>Lagavulin 16</td>
+                <td>1</td>
+                <td>16.00</td>
+                <td>Smoky islay whisky made famous by Ron Swanson from the show Parks and Recreation.</td>
+                <td>Lagavulin distillery</td>
+                <td>NULL</td>
+                <td><button type="button" class="btn-sm btn-secondary">UPDATE</button></td>
+                <td><button type="button" class="btn-sm btn-danger">DELETE</button></td>
+            </tr>
+            <tr>
+                <th scope='row'>1</th>
+                <td>Hopadillo</td>
+                <td>2</td>
+                <td>3.00</td>
+                <td>A dry-hopped,Texas IPA with a flavor as defiant as the Hopadillo himself.</td>
+                <td>Karbach Brewing</td>
+                <td>NULL</td>
+                <td><button type="button" class="btn-sm btn-secondary">UPDATE</button></td>
+                <td><button type="button" class="btn-sm btn-danger">DELETE</button></td>
+            </tr>
+
+            <tr>
+                <th scope='row'>2</th>
+                <td>Guava Rodeo</td>
+                <td>NULL</td>
+                <td>4.00</td>
+                <td>Take your tastebuds for a tart tromp around the yard and buck them headlong into the tropical fruit flavors of pink guava and tangerine.</td>
+                <td>Oskar Blues Brewery</td>
+                <td>NULL</td>
+                <td><button type="button" class="btn-sm btn-secondary">UPDATE</button></td>
+                <td><button type="button" class="btn-sm btn-danger">DELETE</button></td>
+            </tr> -->
+        </table>
+            <script type="text/javascript" src="js/menuItemsFE.js"></script>
+    </div>
+    <!--JS script to display table -->
+
+
+</body>
+</html>
